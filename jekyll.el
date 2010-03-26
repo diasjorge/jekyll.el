@@ -87,3 +87,7 @@ contains the date."
       (kill-buffer nil)
       (find-file filename)
       (set-window-point (selected-window) old-point)))))
+
+;; if mumamo is present we're going to import the mumamo modes
+(if (featurep 'mumamo-fun)
+    (load "jekyll-mumamo.el"))
