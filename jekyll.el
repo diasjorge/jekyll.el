@@ -90,4 +90,4 @@ contains the date."
 
 ;; if mumamo is present we're going to import the mumamo modes
 (if (featurep 'mumamo-fun)
-    (load "jekyll-mumamo.el"))
+    (require 'jekyll-mumamo))
