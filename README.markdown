@@ -13,5 +13,3 @@ For example:
     (add-to-list 'jekyll-modes-list '("erlang" 'erlang-mode))
   </code>
 </pre>
-
-**TODO**: YAML front matter requires an extra space after the triple dash so it recognizes it.
