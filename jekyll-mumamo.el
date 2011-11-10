@@ -1,5 +1,6 @@
 ;; Mumamo Mode for jekyll posts
 ;; by Jorge Dias
+(require 'mumamo-fun)
 
 ;; highlight support for multiple languages
 (defconst mumamo-highlight-tag-start-regex

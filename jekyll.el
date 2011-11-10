@@ -89,5 +89,5 @@ contains the date."
       (set-window-point (selected-window) old-point)))))
 
 ;; if mumamo is present we're going to import the mumamo modes
-(if (featurep 'mumamo-fun)
+(if (require 'mumamo-fun nil t)
     (require 'jekyll-mumamo))
