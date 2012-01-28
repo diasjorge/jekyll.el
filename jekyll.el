@@ -1,7 +1,7 @@
-;; jekyll.el
-;;
-;; Emacs support for Jekyll blogs.
-;;
+;;; jekyll.el --- Emacs support for Jekyll blogs
+
+;;; Commentary:
+
 ;; From metajack/jekyll. http://github.com/metajack/jekyll
 ;;
 ;; To use, just put this file somewhere in the load path and
@@ -22,6 +22,7 @@
 ;;                                   (interactive)
 ;;                                   (find-file "~/Sources/blog/_drafts/")))
 
+;;; Code:
 
 (provide 'jekyll)
 
