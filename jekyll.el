@@ -1,26 +1,24 @@
 ;;; jekyll.el --- Emacs support for Jekyll blogs
 
+;; Author: Jack Moffitt
+;; 	Jorge Dias
+;; Maintainer: Jorge Dias
+
 ;;; Commentary:
 
-;; From metajack/jekyll. http://github.com/metajack/jekyll
+;; Original version: http://github.com/metajack/jekyll
 ;;
 ;; To use, just put this file somewhere in the load path and
 ;;   (require 'jekyll)
 ;;
-;; Here are my key bindings:
-;;   C-c b d - Show all drafts
-;;   C-c b p - Show all posts
-;;   C-c b n - Create new draft
-;;   C-c b P - Publish current draft
+;; Here are the default key bindings:
+;;   C-c j d - Show all drafts
+;;   C-c j p - Show all posts
+;;   C-c j n - Create new draft
+;;   C-c j P - Publish current draft
 ;;
-;; (global-set-key (kbd "C-c b n") 'jekyll-draft-post)
-;; (global-set-key (kbd "C-c b P") 'jekyll-publish-post)
-;; (global-set-key (kbd "C-c b p") (lambda ()
-;;                                   (interactive)
-;;                                   (find-file "~/Sources/blog/_posts/")))
-;; (global-set-key (kbd "C-c b d") (lambda ()
-;;                                   (interactive)
-;;                                   (find-file "~/Sources/blog/_drafts/")))
+;; To load them just do:
+;; (jekyll-init-keybindings)
 
 ;;; Code:
 
@@ -88,6 +86,19 @@ contains the date."
       (kill-buffer nil)
       (find-file filename)
       (set-window-point (selected-window) old-point)))))
+
+(defun jekyll-init-keybindings ()
+  "Initialize default keybindings for jekyll"
+  (global-set-key (kbd "C-c j n") 'jekyll-draft-post)
+  (global-set-key (kbd "C-c j P") 'jekyll-publish-post)
+
+  (global-set-key (kbd "C-c j p") (lambda ()
+                                    (interactive)
+                                    (find-file(concat jekyll-directory "_posts/"))))
+  (global-set-key (kbd "C-c j d") (lambda ()
+                                    (interactive)
+                                    (find-file(concat jekyll-directory "_drafts/"))))
+)
 
 ;; if mumamo is present we're going to import the mumamo modes
 (if (require 'mumamo-fun nil t)
