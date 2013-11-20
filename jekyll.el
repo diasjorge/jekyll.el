@@ -68,7 +68,7 @@ contains the date."
   (cond
    ((not (equal
           (file-name-directory (buffer-file-name (current-buffer)))
-          (concat jekyll-directory jekyll-drafts-dir)))
+          (expand-file-name (concat jekyll-directory jekyll-drafts-dir))))
     (message "This is not a draft post.")
     (insert (file-name-directory (buffer-file-name (current-buffer))) "\n"
             (concat jekyll-directory jekyll-drafts-dir)))
